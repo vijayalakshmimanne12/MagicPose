@@ -1,8 +1,6 @@
 
 
-<p align="center">
-<h1 align="center"></h1>Team 14
-  <p align="center">
+
 
   <h2 align="center">MagicPose: Realistic Human Poses <br> and Facial Expressions Retargeting with Identity-aware Diffusion</h2>
   <p align="center">
