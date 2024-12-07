@@ -5,24 +5,7 @@
   <h2 align="center">Team 14- MagicPose: Realistic Human Poses <br> and Facial Expressions Retargeting with Identity-aware Diffusion</h2>
   
     
-    <br>
-    <sup>1</sup>University of Southern California &nbsp;&nbsp;&nbsp; <sup>2</sup>ByteDance Inc.
-    <br>
-    </br>
-        <a href="https://arxiv.org/abs/2311.12052">
-        <img src='https://img.shields.io/badge/arXiv-MagicPose-green' alt='Paper PDF'>
-        </a>
-        <a href='https://boese0601.github.io/magicdance/'>
-        <img src='https://img.shields.io/badge/Project_Page-MagicPose-blue' alt='Project Page'></a>
-        <a href='https://youtu.be/VPJe6TyrT-Y'>
-        <img src='https://img.shields.io/badge/YouTube-MagicPose-rgb(255, 0, 0)' alt='Youtube'></a>
-     </br>
-    <table align="center">
-        <img src="./figures/1.gif">
-        <img src="./figures/2.gif">
-               &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  GT    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Pose   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; TPS   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Disco   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; MagicDance
-    </table>
-</p>
+    
 
 ## News
 * **[2024.04.03]** Update comparisons to concurrent works. 
