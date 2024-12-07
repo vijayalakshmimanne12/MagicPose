@@ -3,27 +3,8 @@
 
 
   <h2 align="center">Team 14- MagicPose: Realistic Human Poses <br> and Facial Expressions Retargeting with Identity-aware Diffusion</h2>
-  <p align="center">
-    <a href="https://boese0601.github.io/"><strong>Di Chang</strong></a><sup>1</sup>
-    ·  
-    <a href="https://seasonsh.github.io/"><strong>Yichun Shi</strong></a><sup>2</sup>
-    ·
-    <a href="https://zerg-overmind.github.io/"><strong>Quankai Gao</strong></a><sup>1</sup>
-    ·
-    <a href="https://hongyixu37.github.io/homepage/"><strong>Hongyi Xu</strong></a><sup>2</sup>
-    ·
-    <a href="https://www.linkedin.com/in/jessica-fu-60a504254/"><strong>Jessica Fu</strong></a><sup>1</sup>
-    ·
-    <br><a href="https://guoxiansong.github.io/homepage/index.html"><strong>Guoxian Song</strong></a><sup>2</sup>
-    ·  
-    <a href="https://scholar.google.com/citations?user=0TIYjPAAAAAJ&hl=en"><strong>Qing Yan</strong></a><sup>2</sup>
-    ·
-    <a href="https://scholar.google.com/citations?user=hPXUR0cAAAAJ&hl=en"><strong>Yizhe Zhu</strong></a><sup>2</sup>
-    ·
-    <a href="https://scholar.google.com/citations?user=_MAKSLkAAAAJ&hl=en"><strong>Xiao Yang</strong></a><sup>2</sup>
-    ·
-    <a href="https://www.ihp-lab.org/"><strong>Mohammad Soleymani</strong></a><sup>1</sup>
-    ·
+  
+    
     <br>
     <sup>1</sup>University of Southern California &nbsp;&nbsp;&nbsp; <sup>2</sup>ByteDance Inc.
     <br>
