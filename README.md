@@ -108,7 +108,7 @@ Your Dataset
 
 ## Some tips
 ### The task
-From our experiences with this project, this motion retargeting task is a data-hungry task. Generation result highly depends on the training data, e.g. the quality of pose tracker, the amount of video sequences and frames per video in your training data. You may consider adopt [DensePose](https://arxiv.org/abs/1802.00434) as in [MagicAnimate](https://arxiv.org/abs/2311.16498), [DWPose](https://github.com/IDEA-Research/DWPose) as in [Animate Anyone](https://arxiv.org/pdf/2311.17117.pdf) or any other geometry control for better generation quality. We have tried [MMPose](https://github.com/open-mmlab/mmpose) as well, which produced slightly better pose detection results. Introduce extra training data will yield better performance, consider using any other real-human dataset half-body/full-body dataset, e.g. [TaiChi](https://github.com/AliaksandrSiarohin/first-order-model)/[DeepFashion](https://mmlab.ie.cuhk.edu.hk/projects/DeepFashion.html), for further finetuning.
+From our experiences with this project, this motion retargeting task is a data-hungry task. Generation result highly depends on the training data. You may consider adopt [DensePose](https://arxiv.org/abs/1802.00434) as in [MagicAnimate](https://arxiv.org/abs/2311.16498), [DWPose](https://github.com/IDEA-Research/DWPose) as in [Animate Anyone](https://arxiv.org/pdf/2311.17117.pdf) or any other geometry control for better generation quality. We have tried [MMPose](https://github.com/open-mmlab/mmpose) as well, which produced slightly better pose detection results. Introduce extra training data will yield better performance, consider using any other real-human dataset half-body/full-body dataset, e.g. [TaiChi](https://github.com/AliaksandrSiarohin/first-order-model)/[DeepFashion](https://mmlab.ie.cuhk.edu.hk/projects/DeepFashion.html), for further finetuning.
 
 ### The code
 Most of the arguments are self-explanatory in the codes. Several key arguments are explained below.
@@ -124,30 +124,6 @@ Most of the arguments are self-explanatory in the codes. Several key arguments a
 * `image_pretrain_dir` A relative or absolute folder for loading appearance control model checkpoint.
 * `pose_pretrain_dir` A relative or absolute path to pose controlnet.
 
-## Citing
-If you find our work useful, please consider citing:
-```BibTeX
-@article{chang2023magicdance,
-  title={MagicDance: Realistic Human Dance Video Generation with Motions \& Facial Expressions Transfer},
-  author={Chang, Di and Shi, Yichun and Gao, Quankai and Fu, Jessica and Xu, Hongyi and Song, Guoxian and Yan, Qing and Yang, Xiao and Soleymani, Mohammad},
-  journal={arXiv preprint arXiv:2311.12052},
-  year={2023}
-}
-```
-
-## License
-
-Our code is distributed under the USC research license. See `LICENSE.txt` file for more information.
-
-
-## Acknowledgments
-This work was sponsored by the Army Research Office and was accomplished under Cooperative Agreement Number W911NF-20-2-0053. The views and conclusions contained in this document are those of the authors and should not be interpreted as representing the official policies, either expressed or implied, of the Army Research Office or the U.S. Government. The U.S. Government is authorized to reproduce and distribute reprints for Government purposes notwithstanding any copyright notation herein.
-      
-Our code follows several excellent repositories. We appreciate them for making their codes available to the public. We also appreciate the help from [Tan Wang](https://github.com/Wangt-CN), who offered assistance to our baselines comparison experiment.
-
-* [DisCo](https://github.com/Wangt-CN/DisCo)
-* [AnimateDiff](https://github.com/guoyww/AnimateDiff)
-* [ControlNet](https://github.com/lllyasviel/ControlNet)
 
 ## To run the frontend application
 
@@ -197,39 +173,22 @@ $ python app.py
 
 This command will run the backend server on port 5000 which exposes two rest endpoint to accept the input image from the frontend application by using a HTTP multipart formdata request. and it also exposes another HTTP endpoint to stream the output video generate by our ML model back to the frontend. we have used the open cv framework to achieve this feature.
 
-## Jupyter notebook Humannerf.ipynb
 
-The Jupyter notebook provided here has the code to run our inference on the google colab instance. As we have faced so many problems while running our ML model on our own machines becuase this task required a lot of computation power which can only be achieved if we make use of any accelerators like GPU or a TPU (tensor processing unit). To run the inference on a video using the Google colab engine you can either upload this notebook to your drive account and open it in google colab instance or click [here](https://colab.research.google.com/drive/1RGiT2B9D23KMVizM1RrmZSdXPaGzvcmp?usp=sharing) and connect to a GPU instance, once the instace is up and running you can start training the model by following the same instructions as mention in the readme file [here](<(./humanNeRF/README.md)>)
 
 > **_NOTE:_**
 
-    The backend code that is provided here is currently unable to run the inference by itself because in order to do that we need to deploy our backend server on a GPU machine which should atleast be equipped with 4 NVIDIA RTX 2080Ti GPU's. Hence for now we are just taking the video input manually and running the inference on the google colab instance by using the code provived in the jupyter notebook above.
+    The backend code that is provided here is currently unable to run the inference by itself because in order to do that we need to deploy our backend server on a GPU machine which should atleast be equipped with 4 NVIDIA RTX 2080Ti GPU's. 
 
-## Citation
 
+
+## Citing
 ```BibTeX
-@InProceedings{weng_humannerf_2022_cvpr,
-    title     = {Human{N}e{RF}: Free-Viewpoint Rendering of Moving People From Monocular Video},
-    author    = {Weng, Chung-Yi and
-                 Curless, Brian and
-                 Srinivasan, Pratul P. and
-                 Barron, Jonathan T. and
-                 Kemelmacher-Shlizerman, Ira},
-    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-    month     = {June},
-    year      = {2022},
-    pages     = {16210-16220}
+@article{chang2023magicdance,
+  title={MagicDance: Realistic Human Dance Video Generation with Motions \& Facial Expressions Transfer},
+  author={Chang, Di and Shi, Yichun and Gao, Quankai and Fu, Jessica and Xu, Hongyi and Song, Guoxian and Yan, Qing and Yang, Xiao and Soleymani, Mohammad},
+  journal={arXiv preprint arXiv:2311.12052},
+  year={2023}
 }
 ```
 
-```BibTeX
-@misc{peng2021neural,
-      title={Neural Body: Implicit Neural Representations with Structured Latent Codes for Novel View Synthesis of Dynamic Humans},
-      author={Sida Peng and Yuanqing Zhang and Yinghao Xu and Qianqian Wang and Qing Shuai and Hujun Bao and Xiaowei Zhou},
-      year={2021},
-      eprint={2012.15838},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
-}
-```
 
