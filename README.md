@@ -3,8 +3,12 @@
 
 
   <h2 align="center">Team 14- MagicPose: Realistic Human Poses <br> and Facial Expressions Retargeting with Identity-aware Diffusion</h2>
+
+  Contributors : Harika Siripurapu, Bhargav Chowdary Rayidi, Sai Vijaya Lakshmi Manne, Madhavi Indukuri
   
-    
+   ## About
+
+MagicPose is a diffusion-based model designed for human pose and facial expression retargeting. Its goal is to modify a person's pose and facial expression in an image while maintaining their identity, including facial features, skin tone, and clothing. By leveraging ControlNet and advanced deep learning techniques, the project seeks to maintain the fidelity of the original image while accurately adapting the desired pose. 
     
 
 ## News
