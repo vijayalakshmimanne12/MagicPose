@@ -149,7 +149,7 @@ Our code follows several excellent repositories. We appreciate them for making t
 * [AnimateDiff](https://github.com/guoyww/AnimateDiff)
 * [ControlNet](https://github.com/lllyasviel/ControlNet)
 
-  ## To run the frontend application
+## To run the frontend application
 
 ```bash
 $ npm run dev
@@ -157,18 +157,18 @@ $ npm run dev
 
 This command will create a development server and runs the frontend applicaiton on 5173 port. if you enter o + enter on your key board once after the server starts it automatically open a tab in your default browser for the application.
 
-The application has an input field to upload video for which we want to render the free-viwepoint video. Once we select the video file it send the file to the backend flask server to run the inference. Then the server sends back the output video which will be played in the frotnend application
+The application has an input field to upload image for which we want to render the free-viwepoint video. Once we select the image file it send the file to the backend flask server to run the inference. Then the server sends back the output image which will be played in the frotnend application
 
-## humannerf-web-server
+## magicpose-web-server
 
-This folder contains a backend web server build on Python's Flask framework which accepts the video that is sent from the frontend react application and sends it to run the inference and then then responds with the output video which is a freeview render of the inference's output.
+This folder contains a backend web server build on Python's Flask framework which accepts the video that is sent from the frontend react application and sends it to run the inference and then then responds with the output image which is a freeview render of the inference's output.
 
 ### Backend setup
 
 To setup and run the backend server follow below instructions
 
 ```bash
-$ cd ./humannerf-web-server
+$ cd ./magicpose-web-server
 ```
 
 if its a windows machine
@@ -195,7 +195,7 @@ once all the dependencies are installed, run the app.py file to start a backend 
 $ python app.py
 ```
 
-This command will run the backend server on port 5000 which exposes two rest endpoint to accept the input video from the frontend application by using a HTTP multipart formdata request. and it also exposes another HTTP endpoint to stream the output video generate by our ML model back to the frontend. we have used the open cv framework to achieve this feature.
+This command will run the backend server on port 5000 which exposes two rest endpoint to accept the input image from the frontend application by using a HTTP multipart formdata request. and it also exposes another HTTP endpoint to stream the output video generate by our ML model back to the frontend. we have used the open cv framework to achieve this feature.
 
 ## Jupyter notebook Humannerf.ipynb
 
