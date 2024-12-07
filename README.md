@@ -171,7 +171,7 @@ once all the dependencies are installed, run the app.py file to start a backend 
 $ python app.py
 ```
 
-This command will run the backend server on port 5000 which exposes two rest endpoint to accept the input image from the frontend application by using a HTTP multipart formdata request. and it also exposes another HTTP endpoint to stream the output video generate by our ML model back to the frontend. we have used the open cv framework to achieve this feature.
+This command will run the backend server on port 5000 which exposes two rest endpoint to accept the input image from the frontend application by using a HTTP multipart formdata request. and it also exposes another HTTP endpoint to stream the output image generate by our ML model back to the frontend. we have used the open cv framework to achieve this feature.
 
 
 
