@@ -11,49 +11,9 @@
 MagicPose is a diffusion-based model designed for human pose and facial expression retargeting. Its goal is to modify a person's pose and facial expression in an image while maintaining their identity, including facial features, skin tone, and clothing. By leveraging ControlNet and advanced deep learning techniques, the project seeks to maintain the fidelity of the original image while accurately adapting the desired pose. 
     
 
-## News
-* **[2024.04.03]** Update comparisons to concurrent works. 
-* **[2024.02.21]** Update multi-gpu training, dataloader, and instructions for training on your own data. 
-* **[2024.02.15]** Release training and inference code. 
-* **[2024.02.02]** Release updated paper - MagicPose. The method and data are exactly the same.
-* **[2023.11.18]** Release MagicDance paper and project page.
-
-
-## Related Open-Source Works
-
-* [Disco](https://arxiv.org/abs/2307.00040), from Microsoft
-* [MagicAnimate](https://arxiv.org/abs/2311.16498), from ByteDance - Singapore
-
-## Comparison to Concurrent Works
-### Comparison to Animate Anyone
-<p align="center">
-    <table align="center">
-        <img src="./figures/Comparison_Animate_Anyone.gif">
-    </table>
-</p>
-
-### Comparison to MagicAnimate
-Comparison of MagicPose to MagicAnimate on Facial Expression Editing. MagicAnimate fails to generate diverse facial expressions, while MagicPose is able to.
-<div align="center">
-  <img src="./figures/magicanimate_1.png" alt="MagicDance: Realistic Human Dance Video Generation with Motions & Facial Expressions Transfer">
-</div>
-<br>
-
-Comparison of MagicPose to MagicAnimate on in-the-wild pose retargeting. MagicAnimate fails to generate the back of the human subject, while MagicPose is able to.
-
-
-<div align="center">
-  <img src="./figures/magicanimate_2.png" alt="MagicDance: Realistic Human Dance Video Generation with Motions & Facial Expressions Transfer">
-</div>
-<br>
-
 
 ## Getting Started 
-For inference on TikTok dataset or your own image and poses, download our MagicDance [checkpoint](https://drive.google.com/drive/folders/1Ny5zkgo3aLVekCJTAga-D_XlMGpR1cj2?usp=sharing).
-
-For appearance control pretraining, please download the pretrained model for [StableDiffusion V1.5](https://huggingface.co/Boese0601/MagicDance/blob/main/control_sd15_ini.ckpt).
-
-For appearance-disentangled Pose Control, please download pretrained [Appearance Control Model](https://drive.google.com/file/d/1oGIxynPhluSjs2rycwQdK4sCx2W_81xE/view?usp=sharing) and pretrained [ControlNet OpenPose](https://huggingface.co/Boese0601/MagicDance/blob/main/control_v11p_sd15_openpose.pth).
+For inference on TikTok dataset or use your own image and poses.
 
 The pre-processed TikTok dataset can be downloaded from [here](https://drive.google.com/file/d/1jEK0YJ5AfZZuFNqGGqOtUPFx--TIebT9/view?usp=sharing). OpenPose may fail to detect human pose skeletons for some images, so we will filter those failure cases and train our model on clean data.
 
@@ -94,7 +54,7 @@ Our model is also able to retarget the pose of generated image from T2I model.
 ```bash
 bash scripts/inference_tiktok_dataset.sh
 ```
-We use exactly same code from [DisCo](https://github.com/Wangt-CN/DisCo) for metrics evaluation. Some example outputs from our model are shown below:
+
 <div align="center">
   <img src="./figures/tiktok.png" alt="MagicDance: Realistic Human Dance Video Generation with Motions & Facial Expressions Transfer">
 </div>
@@ -113,13 +73,6 @@ Appearance-Disentangled Pose Control:
 bash scripts/appearance_disentangle_pose_control.sh
 ```
 
-
-### Multi-GPU training:
-We have already implemented DistributedDataParallel in the python training script. If you want to use multi gpu instead of the first gpu on your machine for traning, see the following script for an example:
-```bash
-CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 torchrun --master_port 10000 --nproc_per_node 8 train_tiktok.py \
-```
-This will use 8 GPUs and run 8 processes(nproc_per_node=8) for training.
 
 ## Using your own video data for training 
 For training on your own dataset, you first need to run [openpose](https://github.com/CMU-Perceptual-Computing-Lab/openpose) for your input images/videos and save the visualized pose map. Then, organize them as the format shown in the TikTok dataset. You can also refer to [DisCo-OpenPose Preprocessing](https://github.com/Wangt-CN/DisCo/blob/main/PREPRO.md#openpose) or [ControlNet-OpenPose](https://github.com/lllyasviel/ControlNet-v1-1-nightly?tab=readme-ov-file#controlnet-11-openpose), we use exactly the same Pose ControlNet in our pipeline.
